@@ -1,65 +1,62 @@
-# Caja Familiar: app instalable
+# Fintias: cómo instalarla y usarla
 
-App de finanzas personales para Android que se instala desde Chrome (PWA). Funciona sin internet y guarda los datos **solo en tu teléfono**. Ningún servidor recibe tu información.
+Fintias es una app de finanzas personales que se instala en tu Android desde Chrome. Funciona sin internet y guarda tus datos **solo en tu teléfono**: no tiene servidores, cuentas ni costos.
 
-## 1. Publicar la app (una sola vez)
-Android solo instala apps web desde una dirección HTTPS. Esa dirección entrega únicamente el código: tus datos nunca pasan por ella.
+## 1. Publicarla (una sola vez, ~3 minutos)
+1. Descomprime `fintias-app.zip`. Queda una carpeta llamada `fintias`.
+2. En el computador entra a **app.netlify.com/drop** y crea una cuenta gratis (puedes entrar con Google).
+3. Arrastra la carpeta `fintias` a la página. Netlify te da una dirección, por ejemplo `https://algo.netlify.app`.
+4. Opcional: en *Site configuration → Change site name* cámbiale el nombre a uno fácil, como `mis-fintias`.
 
-**Opción A: Netlify (sin GitHub, unos 3 minutos)**
-1. Descomprime `caja-familiar-app.zip`. Queda una carpeta `caja-familiar`.
-2. En el computador, entra a https://app.netlify.com/drop y crea una cuenta gratis (puedes usar Google).
-3. Arrastra la carpeta `caja-familiar` a la página. En segundos te entrega una dirección como `https://nombre-al-azar.netlify.app`.
-4. Opcional: en *Site configuration → Change site name* puedes ponerle un nombre más fácil de recordar.
+**Importante:** usa siempre la misma dirección. Los datos quedan asociados a ella.
 
-**Opción B: GitHub Pages.** Si conectas tu cuenta de GitHub en la sesión con Claude, Claude crea el repositorio y publica la app por ti.
+## 2. Instalarla en el teléfono
+1. Abre la dirección en **Chrome** desde tu Android.
+2. Toca **Instalar** (aparece un aviso en la app, o en el menú ⋮ → *Instalar app*).
+3. Desde ahí se abre con su ícono, a pantalla completa y sin internet.
 
-## 2. Instalar en el teléfono
-1. Abre la dirección en **Chrome** en tu Android.
-2. Toca **Instalar** (aparece en un aviso de la app o en el menú ⋮ → *Instalar app*).
-3. Desde entonces se abre desde su ícono, a pantalla completa y sin necesitar internet.
-4. Al abrirla por primera vez, elige **Empezar con mi plan Origen**.
+## 3. Primer uso
+Puedes partir de tres formas:
+- **Empezar:** eliges moneda (y UF si la usas), categorías y cuentas. Luego el **asistente** arma tu presupuesto en 4 pasos: ingresos, gastos mensuales, meses especiales (aguinaldo, vacaciones, permiso de circulación…) y un resumen con tu ahorro del año.
+- **Explorar con datos de ejemplo:** 12 meses ficticios para ver cómo se ven los gráficos y las alertas. Se borran desde la etiqueta "Datos de ejemplo" o desde Ajustes.
+- **Restaurar un respaldo:** si ya usabas Fintias en otro teléfono.
 
-## 3. Uso
-- **Plan → Mes:** muestra cada ítem con lo presupuestado, lo gastado y lo que te queda. Al tocar un ítem se abre su presupuesto mes a mes.
-- **Herramientas de presupuesto:**
-  - *Fijo:* el mismo monto en un rango de meses.
-  - *Cuotas:* un monto por N meses seguidos.
-  - *Periódico:* un monto cada N meses, por ejemplo anual.
-  - *Borrar:* deja en cero un rango.
-  - También puedes cambiar un solo mes, y cada ítem puede estar en pesos o en UF.
-- **Plan → Grilla anual:** todos los ítems por 12 meses, con totales. Tocar una celda abre ese ítem en ese mes.
-- **+ Agregar ítem:** puedes elegir de una lista de sugerencias o crear uno propio. También se crea desde el registro de un gasto.
-- **Botón +:** registra un gasto, un ingreso o una transferencia contra un ítem. La app avisa si estás por guardar un registro repetido y cuando un ítem cruza su umbral.
-- **Ajustes del ítem:**
-  - umbral de aviso y de límite propios,
-  - día de pago (aparece en "Pagos pendientes"),
-  - *pasar lo que sobre al mes siguiente*: el sobrante o el exceso de un mes ya cerrado se suma o resta al siguiente,
-  - ocultar el ítem.
-- **Tarjeta de crédito:** cada compra se registra como gasto en su ítem, pagada con la tarjeta. El pago de la tarjeta se registra como *Transferencia* de la cuenta a la tarjeta, así no cuenta como gasto dos veces.
-- **Proyección:** saldo mes a mes, meses con déficit, aviso de colchón mínimo y comparación entre planes.
-- **Más:** cuentas y saldos (opcional), deudas, metas, planes (crear, duplicar, activar), grupos, umbrales generales, UF y notificaciones.
+## 4. Uso diario
+- **Registrar:** toca el botón **+** del centro, escribe el monto y toca la categoría. Se guarda al instante y aparece **Deshacer** por si te equivocaste.
+  - El teclado suma y resta, por ejemplo `15000+3200`.
+  - Las categorías que más usas aparecen primero.
+  - Fecha, cuenta y nota solo se tocan si hace falta.
+- **Compras en cuotas:** activa "En cuotas" antes de elegir la categoría. Cada cuota cuenta en el presupuesto de su mes.
+- **Devoluciones:** activa "Devolución". El monto se descuenta de la categoría.
+- **Pagar la tarjeta:** regístralo como *Transferencia* de tu cuenta a la tarjeta. No es un gasto nuevo, porque cada compra ya se registró al hacerla.
+- **Pagos recurrentes** (Ajustes): arriendo, sueldo, suscripciones, créditos. Pueden registrarse solos o pedirte confirmación en Inicio.
 
-## 4. Respaldo (importante)
-Los datos viven solo en el teléfono. Si lo pierdes o borras los datos de Chrome, se pierden.
-- **Más → Guardar respaldo** descarga un archivo JSON. Con **Enviar respaldo** lo puedes mandar a Drive o al correo.
-- La app te recuerda respaldar cuando pasan 30 días sin hacerlo.
-- **Restaurar desde respaldo** carga ese archivo en cualquier teléfono. También acepta el respaldo de la versión anterior (el artefacto en Claude).
-- **Exportar a Excel** genera un archivo con cuatro hojas: Plan, Real, Movimientos y Proyección.
-
-## 5. Mantención
-| Archivo | Qué contiene |
+## 5. Dónde ver cada cosa
+| Pantalla | Qué muestra |
 |---|---|
-| `js/calc.js` | Todos los cálculos: presupuesto, sobrantes, umbrales, disponible y proyección. No depende de la pantalla y tiene pruebas. |
-| `js/store.js` | Base de datos local (IndexedDB). |
-| `js/app.js` | Pantallas y formularios. |
-| `sw.js` | Funcionamiento sin conexión. |
-| `data/plan-origen.json` | Plan inicial, generado desde `calculos.xlsx`. |
+| **Inicio** | Cuánto puedes gastar hoy, gasto del mes contra presupuesto (la marca indica dónde deberías ir según el día), ritmo, cierre estimado, tasa de ahorro, alertas, pagos por confirmar y tus cuentas. |
+| **Presupuesto → Mes** | Cada categoría con lo gastado, lo presupuestado y lo que queda. Tócala para ver su detalle. |
+| **Presupuesto → Año** | Grilla de 12 meses: toca una celda para cambiar ese mes, desde ese mes a diciembre o todo el año. También tiene **Copiar al año siguiente** con reajuste. |
+| **Análisis** | Observaciones automáticas (por ejemplo "Otros subió 52%"), evolución de cada categoría con minicurvas, gasto acumulado del mes contra el anterior, ingresos contra gastos, en qué se va tu plata, proyección de tu saldo, compromisos futuros y metas. |
+| **Detalle de categoría** | Curva de 6, 12 o 24 meses con promedio móvil y presupuesto, variación contra tu promedio, tendencia mensual y su presupuesto del año. |
 
-- **Publicar una versión nueva:** sube `VERSION` en `sw.js` y vuelve a arrastrar la carpeta a Netlify. La app muestra "Hay una versión nueva → Actualizar" y tus datos no se tocan.
-- **Pruebas:** `node tests/pwa_unit.js` (cálculos, incluida la comparación con el Excel) y `node tests/pwa_e2e.js` (la app completa en tamaño de teléfono, sin conexión, respaldo y restauración).
-- **Regenerar el plan desde el Excel:** `python3 tools/build_seed.py` y luego `tools/build_seed_v2.py`.
+## 6. Alertas
+- Avisa al llegar al 80% del presupuesto de una categoría y al superar el 100%. Los umbrales se cambian en Ajustes, y cada categoría puede tener los suyos.
+- En los gastos fijos (arriendo, cuentas) pagar el 100% es lo normal: solo avisa si te pasas.
+- Puedes activar notificaciones del teléfono en *Ajustes → Alertas y preferencias*.
 
-## 6. Límites conocidos
-- Las notificaciones aparecen al registrar un gasto que cruza un umbral. Los recordatorios programados con la app cerrada ("mañana vence el dividendo") requieren un servidor y quedan para una fase 2.
-- La UF se actualiza a mano en Más.
-- No hay sincronización entre dispositivos: para cambiar de teléfono se usa el respaldo.
+## 7. Respaldo (importante)
+Tus datos están solo en el teléfono: si lo pierdes o borras los datos de Chrome, se pierden.
+- En *Ajustes → Respaldo*, usa **Enviar respaldo a Drive, correo…** una vez al mes. La app te lo recuerda cuando pasan 30 días.
+- **Exportar a Excel** genera tus movimientos, el presupuesto del año y lo real por mes.
+- Antes de restaurar o borrar, Fintias guarda una copia automática interna que puedes recuperar.
+
+## 8. Actualizaciones
+Cuando se publique una versión nueva (arrastrando la carpeta nueva a Netlify), la app mostrará "Hay una versión nueva → Actualizar". Tus datos no se tocan.
+
+## 9. Límites conocidos
+- La UF se ingresa a mano (Ajustes → Alertas y preferencias). Cada mes guarda su propio valor.
+- No hay recordatorios con la app cerrada (por ejemplo "mañana vence el arriendo"), porque requieren un servidor.
+- Sin sincronización entre teléfonos: para cambiar de teléfono se usa el respaldo. El respaldo automático en Google Drive quedó para una próxima etapa.
+
+La documentación técnica para mantener la app está en `README.md`, dentro de `fintias-codigo.zip`.
